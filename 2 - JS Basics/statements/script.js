@@ -1,83 +1,26 @@
-// let firstName = 'John';
-// let lastName = 'Smith';
-// let age = 28;
-//
-// let fullAge = true;
-//
-// console.log(fullAge);
-// console.log(firstName);
-//
-// // Type coercion
-// console.log(firstName + age);
-//
-// let job, isMarried;
-// job = 'teacher';
-// isMarried = false;
-// console.log(firstName + ' ' + age + ' years old' + '. Is is he married? ' + isMarried);
-//
-// // Variable mutation
-// age = 'twenty eight';
-// job = 'driver';
-// alert(firstName + ' ' + age + ' years old' + '. Is is he married? ' + isMarried);
-//
-// var myName = prompt('what is it last name');
-// console.log(firstName + ' ' + myName);
-
-
 /********************************************
- * Basic operators
+ * If / else
  */
 
-// let year, yearJohn, yearDan;
-// year = 2018;
-// ageJohn = 28;
-// ageDan = 33;
-//
-// //Math operators
-// yearJohn = year - ageJohn;
-// yearDan = year - ageDan;
-//
-// console.log(yearJohn);
-//
-// console.log(year + 2);
-// console.log(year * 2);
-// console.log(year / 10);
-//
-// // Logical operator
-// let johnOlder = ageJohn > ageDan;
-// console.log(johnOlder);
-//
-// // typeOf operator
-// console.log(typeof yearDan);
+let firstName = 'John';
+let civilStatus = 'single';
+
+if (civilStatus === 'married') {
+    console.log(firstName + ' is married');
+} else {
+    console.log(firstName + ' is not married');
+}
+
+let isMarried = true;
+
+if (isMarried) {
+    console.log(firstName + ' is married');
+} else {
+    console.log(firstName + ' is not married');
+}
 
 
-
-/********************************************
- * Operator precedence
- */
-
-// let now = 2020;
-// let yearJohn = 1989;
-// let fullAge = 18;
 //
-// let isFullAge = now - yearJohn >= fullAge;
-// console.log(isFullAge);
-//
-// let ageJohn = now - yearJohn;
-// let ageMark = 35;
-// let average = (ageJohn + ageMark) / 2;
-// console.log(average);
-//
-// // Multiple assigments
-//
-// let x, y;
-// x = y= (3 + 5) * 4 - 6;
-// console.log(x, y);
-
-
-/********************************************
- * Coding challenge 1
- */
 
 let markMass = 80;
 let markHeight = 1.90;
@@ -86,9 +29,88 @@ let johnMass = 80;
 let johnHeight = 1.80;
 
 let markBmi = markMass / (markHeight * markHeight);
-console.log(Math.floor(markBmi));
-
 let johnBmi = johnMass / (johnHeight * johnHeight);
 
-let bmiHigher = johnBmi > markBmi;
-console.log(`Is John BMI higher than Marks? ${bmiHigher}`);
+if (markBmi > johnBmi) {
+    console.log('Mark\'s  bmi is higher than John\'s. ');
+} else {
+    console.log('John\'s bmi is higher than Mark\'s.');
+}
+
+
+/********************************************
+ * Boolean logic
+ */
+
+firstName = 'John';
+let age = 36;
+
+if (age < 13) {
+    console.log(firstName + ' is a boy');
+} else if (age >= 13 && age < 20) {
+    console.log(firstName + ' is a teenager');
+} else if (age >= 20 && age < 30) {
+    console.log(firstName + ' is a young man');
+} else {
+    console.log(firstName + ' is a man');
+}
+
+
+/********************************************
+ * Ternary Operator
+ */
+
+age >= 18 ? console.log(firstName + ' drinks beer') : console.log(firstName + ' drinks juice');
+let drink = age >= 18 ? 'beer' : 'juice';
+console.log(firstName + ' drinks ' + drink);
+
+
+/********************************************
+ * Switch statement
+ */
+
+let job = 'instructor';
+switch (job) {
+    case 'teacher':
+    case 'instructor':
+        console.log(firstName + ' teachers kids');
+        break;
+    case 'drivers':
+        console.log(firstName + ' drives a car');
+        break;
+    case 'designer':
+        console.log(firstName + ' designs sites');
+        break;
+    default:
+        console.log(firstName + ' does something else');
+}
+
+switch (true) {
+    case age < 13:
+        console.log(firstName + ' is a boy');
+        break;
+    case age > 13 && age < 20:
+        console.log(firstName + ' is a teenager');
+    case age >= 20 && age < 30:
+        console.log(firstName + ' is a young man');
+        break;
+    default:
+        console.log(firstName + ' is a man');
+}
+
+
+/********************************************
+ * True // false
+ */
+
+let height = 0;
+if (height || height === 0) {
+    console.log('Variable is defined');
+} else {
+    console.log('Variable is NOT defined');
+}
+
+// Equality operators
+if (height == '23') {
+    console.log('Variable is NOT defined');
+}
